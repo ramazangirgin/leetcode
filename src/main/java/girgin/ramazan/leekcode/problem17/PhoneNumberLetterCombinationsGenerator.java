@@ -30,9 +30,8 @@ public class PhoneNumberLetterCombinationsGenerator {
             return Collections.emptyList();
         }
         initMap();
-        char[] chars = digits.toCharArray();
         List<String> resultList = new ArrayList<>();
-        executeLevel(resultList, "", chars, 0);
+        executeLevel(resultList, "", digits.toCharArray(), 0);
         return resultList;
     }
 
@@ -41,8 +40,7 @@ public class PhoneNumberLetterCombinationsGenerator {
             resultList.add(input);
             return;
         }
-        char digit = chars[index];
-        char[] digitLetters = numberMap.get(digit);
+        char[] digitLetters = numberMap.get(chars[index]);
         for (Character digitLetter : digitLetters) {
             executeLevel(resultList, input + digitLetter, chars, index + 1);
         }
