@@ -48,3 +48,8 @@ hs_err_pid*
 /nbdist/
 /.nb-gradle/
 /build/
+
+### MacOS ###
+.DS_Store
+
+
